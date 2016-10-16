@@ -11,7 +11,7 @@ Then install *byzanz*
 
 ### Usage
 ```
-gifrec <duration> <file_name>
+gifrec <duration> <file_name.gif>
 ```
 PS : There is a sleep of 2 seconds before the start of the record. You will hear a sound when the record begin.
 
