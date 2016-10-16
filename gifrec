@@ -1,25 +1,27 @@
 #!/bin/bash
 
 beep() {
-    paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+    paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
 }
 
-echo "Welcome to gif rec"
+if [ -z $1 ] || [[ $1 == "--help" ]] || [[ $1 == "-h" ]] || [ -z $2 ]
+then
+	echo -e "Usage :\n"
+	echo -e "\tgifrec <duration> <file_name.gif>\n"
+	echo -e "Parameters :\n"
+	echo -e "\t<duration> : Duration of the record in seconds"
+	echo -e "\t<file_name.gif> : The output file name"
+	exit
+fi
 
-echo -n "Duration : "
-read duration
-echo -n "Name of file : "
-read name
-name=${name// /_}
 
-
-sel=$(xrectsel)
-width=`echo $sel | cut -d '+' -f1 | cut -d 'x' -f1`
-height=`echo $sel | cut -d '+' -f1 | cut -d 'x' -f2`
-x=`echo $sel | cut -d '+' -f2`
-y=`echo $sel | cut -d '+' -f3`
+sel=$(xrectsel | sed 's/[+x]/_/g')
+width=`echo $sel | cut -d '_' -f1`
+height=`echo $sel | cut -d '_' -f2`
+x=`echo $sel | cut -d '_' -f3`
+y=`echo $sel | cut -d '_' -f4`
 
 sleep 2
 beep
-byzanz-record --duration=$duration --width=$width --height=$height --x=$x --y=$y $name
+byzanz-record --duration=$1 --width=$width --height=$height --x=$x --y=$y $2
 beep
