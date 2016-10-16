@@ -1,5 +1,7 @@
 # gifrec
 
+With this library you can register a gif of selected area on you screen for a defined time.
+
 ## Installation
 Install this repository [xrectsel] (https://github.com/lolilolicon/xrectsel)
 
@@ -13,5 +15,6 @@ Then copy the file *gifrec* on a directory set in **PATH**
 ```
 gifrec <duration> <file_name.gif>
 ```
-PS : There is a sleep of 2 seconds before the start of the record. You will hear a sound when the record begin.
-
+When you execute this command you have to make a square selection.
+Then you have 2 seconds to switch from your terminal to the desired area.
+You will hear a sound when the record starts and when it is finished. 
