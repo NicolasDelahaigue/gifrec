@@ -1,7 +1,7 @@
 # gifrec
 
 ## Installation
-Install this repository [xrectsel] [1]
+Install this repository [xrectsel] (https://github.com/lolilolicon/xrectsel)
 xrectsel requires libX11 and automake
 
 Then copy the file *gifrec* on a directory set in **PATH**
@@ -11,5 +11,3 @@ Then copy the file *gifrec* on a directory set in **PATH**
 gifrec <duration> <file_name>
 ```
 
-
-[1] : https://github.com/lolilolicon/xrectsel "xrectsel"
