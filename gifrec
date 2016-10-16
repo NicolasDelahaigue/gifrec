@@ -1,0 +1,25 @@
+#!/bin/bash
+
+beep() {
+    paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+}
+
+echo "Welcome to gif rec"
+
+echo -n "Duration : "
+read duration
+echo -n "Name of file : "
+read name
+name=${name// /_}
+
+
+sel=$(xrectsel)
+width=`echo $sel | cut -d '+' -f1 | cut -d 'x' -f1`
+height=`echo $sel | cut -d '+' -f1 | cut -d 'x' -f2`
+x=`echo $sel | cut -d '+' -f2`
+y=`echo $sel | cut -d '+' -f3`
+
+sleep 2
+beep
+byzanz-record --duration=$duration --width=$width --height=$height --x=$x --y=$y $name
+beep
