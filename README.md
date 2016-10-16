@@ -13,4 +13,5 @@ Then install *byzanz*
 ```
 gifrec <duration> <file_name>
 ```
+PS : There is a sleep of 2 seconds before the start of the record. You will hear a sound when the record begin.
 
